@@ -1,0 +1,33 @@
+@page "/afazeresList"
+
+<h1>Lista</h1>
+@foreach (var item in listaAfazeres)
+{
+    <Row>
+    <Column ColumnSize="ColumnSize.Is8">
+        <Alert Color="Color.Primary" Visible="true">
+            @item.Titulo;
+            </Alert>
+    </Column>
+    <Column ColumnSize="ColumnSize.Is4">
+        <Alert Color="Color.Secondary" Visible="true">
+            @(item.Feito ? "OK" : "ainda não fiz");
+        </Alert>
+    </Column>
+</Row>
+    
+}
+
+
+@code {
+     List<Afazeres> listaAfazeres;
+    protected override void OnInitialized()
+    {
+        listaAfazeres = new List<Afazeres>(){
+        new Afazeres(){Titulo = "Passear com cachorro", Feito = false},
+        new Afazeres(){Titulo = "Comprar coisas", Feito = false},
+        new Afazeres(){Titulo = "Pagar conta", Feito = true}
+        };
+    }
+}
+
