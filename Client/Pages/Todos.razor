@@ -1,4 +1,5 @@
 @page "/todos"
+@using blazorizeApp.Shared
 
 <Container>
 <Addons>
@@ -28,22 +29,17 @@
 @code{
     List<TodoEntity> listaTodo;
     public string newTodo { get; set; }
-
     private void AddTask()
     {
         listaTodo.Add(new TodoEntity { Title = newTodo });
-
     }
-
     protected override void OnInitialized()
     { //método executado quando um arquivo razor é carregado
-
         listaTodo = new List<TodoEntity>(){
-    new TodoEntity(){Title = "Passear com cachorro", Done = false},
-    new TodoEntity(){Title = "Comprar coisas", Done = false},
-    new TodoEntity(){Title = "Pagar conta", Done = true}
-    };
-
+        new TodoEntity(){Title = "Passear com cachorro", Done = false},
+        new TodoEntity(){Title = "Comprar coisas", Done = false},
+        new TodoEntity(){Title = "Pagar conta", Done = true}
+        };
     }
 
 }

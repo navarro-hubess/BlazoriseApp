@@ -1,6 +1,6 @@
 using System;
 
-namespace BlazorAppProject.Shared
+namespace blazorizeApp.Shared
 {
     public class TodoEntity
     {

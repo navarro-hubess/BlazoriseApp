@@ -1,0 +1,27 @@
+@page "/afazeres"
+
+<Button Color="Color.Danger">Cancelar</Button>
+<Button Color="Color.Success">Success</Button>
+<p>Item: @a.Titulo</p>
+<p>Item: @b.Titulo</p>
+
+@code {
+
+    public Afazeres a { get; set; }
+    public Afazeres b { get; set; }
+    protected override void OnInitialized()
+    {
+        a = new Afazeres()
+        {
+            Titulo = "Teste",
+            Feito = true
+        };
+
+        b = new Afazeres();
+        b.Titulo = "Teste 2";
+        b.Feito = false;
+    }
+
+
+}
+
